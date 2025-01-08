@@ -32,17 +32,12 @@ resource "random_pet" "sg" {}
 
 data "aws_ami" "ubuntu" {
   most_recent = true
+  owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+    values = ["al2023-ami-2023.*-x86_64"]
   }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
   owners = ["471112661949"] # Canonical
 }
 
