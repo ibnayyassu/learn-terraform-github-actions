@@ -47,11 +47,12 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum update
-              yum install -y apache2
-              sed -i -e 's/80/8080/' /etc/apache2/ports.conf
-              echo "Hello World" > /var/www/html/index.html
-              systemctl restart apache2
+              yum update -y
+              yum install -y nginx
+              #sed -i 's/80/8080/g' /etc/nginx/nginx.conf
+              echo "Hello World" > /usr/share/nginx/html/index.html
+              systemctl start nginx
+              systemctl enable nginx
               EOF
 }
 
