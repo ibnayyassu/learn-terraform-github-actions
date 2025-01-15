@@ -31,8 +31,8 @@ resource "random_pet" "sg" {}
 
 data "aws_ami" "amazon-linux-ami" {
   most_recent = true
-  #owners      = ["amazon"]
-  owners = "183631319475"
+  owners      = ["amazon"]
+  #owners = "183631319475"
 
   filter {
     name   = "name"
