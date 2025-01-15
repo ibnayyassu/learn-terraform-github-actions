@@ -15,7 +15,7 @@ terraform {
   required_version = ">= 1.1.0"
 
   cloud {
-    organization = "Sergino"
+    organization = "MenofAWS"
 
     workspaces {
       name = "learn-terraform-github-actions"
@@ -31,7 +31,8 @@ resource "random_pet" "sg" {}
 
 data "aws_ami" "amazon-linux-ami" {
   most_recent = true
-  owners      = ["amazon"]
+  #owners      = ["amazon"]
+  owners = "183631319475"
 
   filter {
     name   = "name"
